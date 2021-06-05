@@ -15,92 +15,91 @@
 
 TIMIT语料库是为声学语音知识的获取（模型训练）以及自动语音识别系统（ASR）的评估（模型测试）而构建的，是由国防部赞助，在研究计划署（DARPA-ISTO）、麻省理工学院（MIT）、斯坦福研究院（SRI）、德州仪器（TI）共同努力下完成。说话人信息：由来自美国8个主要方言地区的630位说话者讲10个句子构成。10个句子分为：
 
-**SA-**方言句子（Dialect sentence）**：由SRI设计，总共2句。每个人都会读SA1、SA2这两个句子，体现不同地区方言的差别。（因此可用于方言判断算法的数据集，而其他情况一般不用该类句子）
+**SA-**方言句子（Dialect sentence）：由SRI设计，总共2句。每个人都会读SA1、SA2这两个句子，体现不同地区方言的差别。（因此可用于方言判断算法的数据集，而其他情况一般不用该类句子）
 
- **SX-**音素紧凑的句子（Phondtically-compact sentence）**：由MIT设计，总共450句，目的是让句子中的音素分布平衡，尽可能的包含所有音素对。每个人读5个SX句子，并且每个SX句子被7个不同的人读。
+ **SX-**音素紧凑的句子（Phondtically-compact sentence）：由MIT设计，总共450句，目的是让句子中的音素分布平衡，尽可能的包含所有音素对。每个人读5个SX句子，并且每个SX句子被7个不同的人读。
 
- **SI-**音素发散的句子（Phonetically-diverse sentence）**：由TI在现有语料库Brown Corpus与剧作家对话集（the Playwrights Dialog）挑选的，总共1890句。目的是增加句子类型和音素文本的多样性，使之尽可能的包括所有的等位语境（Allophonic context）。每个人读三个SI句子，并且每个SI句子仅被一个人读一次。
+ **SI-**音素发散的句子（Phonetically-diverse sentence）：由TI在现有语料库Brown Corpus与剧作家对话集（the Playwrights Dialog）挑选的，总共1890句。目的是增加句子类型和音素文本的多样性，使之尽可能的包括所有的等位语境（Allophonic context）。每个人读三个SI句子，并且每个SI句子仅被一个人读一次。
 
 630个说话人被分为TRAIN（462人）和TEST（168人）。我只用到TRAIN的462个说话人语音数据。所以我的说话人样本数是462个。因为SA的两个句子是方言，所以我并没有用到这两个句子。其他8个句子，我是用SX的5个句子和SI的1个句子作为训练集，SI的另外2个句子作为测试集。并将6个训练句子合并为1个句子方便提取MFCC特征。
 
-我自己在TIMIT数据集基础上划分的数据。[[Baidu Driver（提取码: 1234）](https://pan.baidu.com/s/1lFIUMImRlbHpjMrD8-mTtg) | [Google Driver]()]
+我自己在TIMIT数据集基础上划分的数据。[[Baidu Driver（提取码: 1234）](https://pan.baidu.com/s/1lFIUMImRlbHpjMrD8-mTtg) | [Google Driver](https://drive.google.com/file/d/1J8YaWN9oFFGzVH6kNPcI8VsXmFe8g5gr/view?usp=sharing)]
 
-也可下载TIMIT原始数据，根据你自己的情况划分数据。[[Baidu Driver（提取码: 1234）](https://pan.baidu.com/s/1CCNLCg4_jwyxQh56uFQzbw) | [Google Driver]()]
+也可下载TIMIT原始数据，根据你自己的情况划分数据。[[Baidu Driver（提取码: 1234）](https://pan.baidu.com/s/1CCNLCg4_jwyxQh56uFQzbw) | [Google Driver](https://drive.google.com/file/d/180mSIiXN9RVDV2Xn1xcWNkMRm5J5MjN4/view?usp=sharing)]
 
-> ├─TEST（168人）
-> │  ├─DR1
-> │  │  ├─FCJF0
-> │  │  ├─FDAW0
-> .......
-> │  ├─DR2
-> │  │  ├─FAEM0
-> │  │  ├─FAJW0
-> ......
-> │  ├─DR3
-> │  │  ├─FALK0
-> │  │  ├─FCKE0
-> ......
-> │  ├─DR4
-> │  │  ├─FALR0
-> │  │  ├─FBAS0
-> ......
-> │  ├─DR5
-> │  │  ├─FBJL0
-> │  │  ├─FBMH0
-> ......
-> │  ├─DR6
-> │  │  ├─FAPB0
-> │  │  ├─FBCH0
-> ......
-> │  └─DR8
-> │      ├─FBCG1
-> │      ├─FCEG0
-> ......
-> ├─TEST_MFCC（测试集提取MFCC，462人）
-> │  ├─spk_1
-> │  ├─spk_10
-> │  ├─spk_100
-> ......
-> ├─TRAIN（训练集数据，462人）
-> │  ├─DR1
-> │  │  ├─FCJF0
-> │  │  ├─FDAW0
-> ......
-> │  ├─DR2
-> │  │  ├─MTJG0
-> │  │  ├─MWSB0
->
-> ......
->
-> │  ├─DR3
-> │  │  ├─FALK0
-> │  │  ├─FCKE0
-> ......
-> │  ├─DR4
-> │  │  ├─FALR0
-> │  │  ├─FBAS0
-> ......
-> │  ├─DR5
-> │  │  ├─FBJL0
-> │  │  ├─FBMH0
-> ......
-> │  ├─DR6
-> │  │  ├─FAPB0
-> │  │  ├─FBCH0
-> ......
-> │  ├─DR7
-> │  │  ├─FBLV0
-> │  │  ├─FCJS0
-> ......
-> │  └─DR8
-> │      ├─FBCG1
-> │      ├─FCEG0
-> ......
-> └─TRAIN_MFCC（提取的训练集MFCC，462人）
->     ├─spk_1
->     ├─spk_10
->     ├─spk_100
->    ......
+> ├─TEST（168人）  
+> │  ├─DR1  
+> │  │  ├─FCJF0  
+> │  │  ├─FDAW0 
+> .......  
+> │  ├─DR2  
+> │  │  ├─FAEM0  
+> │  │  ├─FAJW0  
+> ......  
+> │  ├─DR3  
+> │  │  ├─FALK0  
+> │  │  ├─FCKE0  
+> ......  
+> │  ├─DR4  
+> │  │  ├─FALR0  
+> │  │  ├─FBAS0  
+> ......  
+> │  ├─DR5  
+> │  │  ├─FBJL0  
+> │  │  ├─FBMH0  
+> ......  
+> │  ├─DR6  
+> │  │  ├─FAPB0  
+> │  │  ├─FBCH0  
+> ......  
+> │  └─DR8  
+> │      ├─FBCG1  
+> │      ├─FCEG0  
+> ......  
+> ├─TEST_MFCC（测试集提取MFCC，462人）  
+> │  ├─spk_1  
+> │  ├─spk_10  
+> │  ├─spk_100  
+> ......  
+> ├─TRAIN（训练集数据，462人）  
+> │  ├─DR1  
+> │  │  ├─FCJF0  
+> │  │  ├─FDAW0  
+> ......  
+> │  ├─DR2  
+> │  │  ├─MTJG0  
+> 
+>......     
+> 
+>│  ├─DR3  
+> │  │  ├─FALK0  
+> │  │  ├─FCKE0  
+> ......  
+> │  ├─DR4  
+> │  │  ├─FALR0  
+> │  │  ├─FBAS0  
+> ......  
+> │  ├─DR5  
+> │  │  ├─FBJL0  
+> │  │  ├─FBMH0  
+> ......  
+> │  ├─DR6  
+> │  │  ├─FAPB0  
+> │  │  ├─FBCH0  
+> ......  
+> │  ├─DR7  
+> │  │  ├─FBLV0  
+> │  │  ├─FCJS0  
+> ......  
+> │  └─DR8  
+> │      ├─FBCG1  
+> │      ├─FCEG0  
+> ......  
+> └─TRAIN_MFCC（提取的训练集MFCC，462人）  
+>  ├─spk_1  
+>     ├─spk_10  
+>     ├─spk_100  
+>    ......  
 
 **我使用Python实现的算法流程大致如下：**
 
