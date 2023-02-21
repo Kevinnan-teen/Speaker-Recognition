@@ -23,9 +23,9 @@ TIMIT语料库是为声学语音知识的获取（模型训练）以及自动语
 
 630个说话人被分为TRAIN（462人）和TEST（168人）。我只用到TRAIN的462个说话人语音数据。所以我的说话人样本数是462个。因为SA的两个句子是方言，所以我并没有用到这两个句子。其他8个句子，我是用SX的5个句子和SI的1个句子作为训练集，SI的另外2个句子作为测试集。并将6个训练句子合并为1个句子方便提取MFCC特征。
 
-我自己在TIMIT数据集基础上划分的数据。[[Baidu Driver（提取码: 1234）](https://pan.baidu.com/s/1lFIUMImRlbHpjMrD8-mTtg) | [Google Driver](https://drive.google.com/file/d/1J8YaWN9oFFGzVH6kNPcI8VsXmFe8g5gr/view?usp=sharing)]
+我自己在TIMIT数据集基础上划分的数据。[[Baidu Driver](https://pan.baidu.com/s/1YnPZochiRY0IDfSoFbivqw?pwd=c1fc) | [Google Driver](https://drive.google.com/file/d/1J8YaWN9oFFGzVH6kNPcI8VsXmFe8g5gr/view?usp=sharing)]
 
-也可下载TIMIT原始数据，根据你自己的情况划分数据。[[Baidu Driver（提取码: 1234）](https://pan.baidu.com/s/1CCNLCg4_jwyxQh56uFQzbw) | [Google Driver](https://drive.google.com/file/d/180mSIiXN9RVDV2Xn1xcWNkMRm5J5MjN4/view?usp=sharing)]
+也可下载TIMIT原始数据，根据你自己的情况划分数据。[[Baidu Driver](https://pan.baidu.com/s/1YnPZochiRY0IDfSoFbivqw?pwd=c1fc) | [Google Driver](https://drive.google.com/file/d/180mSIiXN9RVDV2Xn1xcWNkMRm5J5MjN4/view?usp=sharing)]
 
 > ├─TEST（168人）  
 > │  ├─DR1  
@@ -40,22 +40,6 @@ TIMIT语料库是为声学语音知识的获取（模型训练）以及自动语
 > │  │  ├─FALK0  
 > │  │  ├─FCKE0  
 > ......  
-> │  ├─DR4  
-> │  │  ├─FALR0  
-> │  │  ├─FBAS0  
-> ......  
-> │  ├─DR5  
-> │  │  ├─FBJL0  
-> │  │  ├─FBMH0  
-> ......  
-> │  ├─DR6  
-> │  │  ├─FAPB0  
-> │  │  ├─FBCH0  
-> ......  
-> │  └─DR8  
-> │      ├─FBCG1  
-> │      ├─FCEG0  
-> ......  
 > ├─TEST_MFCC（测试集提取MFCC，462人）  
 > │  ├─spk_1  
 > │  ├─spk_10  
@@ -68,32 +52,10 @@ TIMIT语料库是为声学语音知识的获取（模型训练）以及自动语
 > ......  
 > │  ├─DR2  
 > │  │  ├─MTJG0  
-> 
 >......     
-> 
 >│  ├─DR3  
 > │  │  ├─FALK0  
 > │  │  ├─FCKE0  
-> ......  
-> │  ├─DR4  
-> │  │  ├─FALR0  
-> │  │  ├─FBAS0  
-> ......  
-> │  ├─DR5  
-> │  │  ├─FBJL0  
-> │  │  ├─FBMH0  
-> ......  
-> │  ├─DR6  
-> │  │  ├─FAPB0  
-> │  │  ├─FBCH0  
-> ......  
-> │  ├─DR7  
-> │  │  ├─FBLV0  
-> │  │  ├─FCJS0  
-> ......  
-> │  └─DR8  
-> │      ├─FBCG1  
-> │      ├─FCEG0  
 > ......  
 > └─TRAIN_MFCC（提取的训练集MFCC，462人）  
 >  ├─spk_1  
